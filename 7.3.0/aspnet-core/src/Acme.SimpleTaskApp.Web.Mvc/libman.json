@@ -1,0 +1,110 @@
+{
+  "defaultProvider": "cdnjs",
+  "version": "1.0",
+  "libraries": [{
+  "library": "jquery@3.6.0",
+  "destination": "wwwroot/libs/"
+}
+,
+{
+  "library": "bootstrap@5.2.0",
+  "destination": "wwwroot/libs/bootstrap/"
+}
+,
+{
+  "library": "datatables@1.10.21",
+  "destination": "wwwroot/libs/datatables/"
+}
+,
+{
+  "library": "datatables-responsive@2.3.0",
+  "destination": "wwwroot/libs/datatables-responsive/"
+}
+,
+{
+  "library": "datatables.net-responsive-bs4@2.3.0",
+  "destination": "wwwroot/libs/datatables.net-responsive-bs4/"
+}
+,
+{
+  "library": "datatables-buttons@2.2.3",
+  "destination": "wwwroot/libs/datatables-buttons/"
+}
+,
+{
+  "library": "datatables.net-buttons-bs4@2.2.3",
+  "destination": "wwwroot/libs/datatables.net-buttons-bs4/"
+}
+,
+{
+  "library": "admin-lte@3.2.0",
+  "destination": "wwwroot/libs/admin-lte/"
+}
+,
+{
+  "provider": "jsdelivr",
+  "library": "block-ui@2.70.1",
+  "destination": "wwwroot/libs/block-ui/"
+}
+,
+{
+  "provider": "jsdelivr",
+  "library": "spin@0.0.1",
+  "destination": "wwwroot/libs/spin/"
+}
+,
+{
+  "library": "sweetalert@2.1.2",
+  "destination": "wwwroot/libs/sweetalert/"
+}
+
+,
+{
+  "provider": "jsdelivr",
+  "library": "toastr@2.1.4",
+  "destination": "wwwroot/libs/toastr/"
+}
+,
+
+{
+  "library": "moment.js@2.29.4",
+  "destination": "wwwroot/libs/moment.js/"
+}
+,
+{
+  "library": "aspnet-signalr@1.0.27",
+  "destination": "wwwroot/libs/aspnet-signalr/"
+}
+,
+{
+  "provider": "jsdelivr",
+  "library": "abp-web-resources@5.6.0",
+  "destination": "wwwroot/libs/abp-web-resources/"
+}
+,
+{
+  "library": "jquery-validate@1.19.5",
+  "destination": "wwwroot/libs/jquery-validate/"
+}
+,
+{
+  "library": "jquery-validation-unobtrusive@4.0.0",
+  "destination": "wwwroot/libs/jquery-validation-unobtrusive/"
+}
+,
+{
+  "library": "push.js@1.0.12",
+  "destination": "wwwroot/libs/push.js/"
+}
+,
+{
+  "library": "font-awesome@6.1.2",
+  "destination": "wwwroot/libs/font-awesome/"
+}
+,
+{
+  "library": "icheck-bootstrap@3.0.1",
+  "destination": "wwwroot/libs/icheck-bootstrap/"
+}
+]
+}
