@@ -1,6 +1,10 @@
 ﻿@using Acme.SimpleTaskApp.Controllers
+@using Acme.SimpleTaskApp.Web.Startup
 @model IndexViewModel
-
+@{
+    ViewBag.Title = L("TaskList");
+    ViewBag.CurrentPageName = PageNames.Tasks;
+}
 @section scripts
 {
     <environment names="Development">
@@ -9,19 +13,43 @@
     </environment>
 
     <environment names="Staging,Production">
-        <script src="~/view-resources/Views/Tasks/Index.js"></script>
+        <script src="~/view-resources/Views/Tasks/Index.min.js"></script>
         <script src="~/view-resources/Views/Tasks/create.min.js"></script>
     </environment>
 
 }
 
-@{
-    ViewBag.Title = L("TaskList");
-    ViewBag.ActiveMenu = "TaskList"; //Matches with the menu name in SimpleTaskAppNavigationProvider to highlight the menu item
-}
 
-<h2>@L("TaskList")
-    <a class="btn btn-primary btn-sm" asp-action="Create">@L("AddNew")</a>
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>@L("TaskList")</h1>
+            </div>
+            <div class="col-sm-6">
+                <a asp-action="Create"  data-toggle="modal" data-target="#UserCreateModal" class="btn bg-blue float-sm-right" >
+                    <i class="fa fa-plus-square"></i>
+                    @L("AddNew")
+                </a>
+            </div>
+             <span class="pull-right">
+        @Html.DropDownListFor(
+           model => model.SelectedTaskState,
+           Model.GetTasksStateSelectListItems(LocalizationManager),
+           new
+           {
+               @class = "form-control",
+               id = "TaskStateCombobox"
+           })
+    </span>
+        </div>
+    </div>
+</section>
+@*<h2>@L("TaskList")
+     <a href="javascript:;" data-toggle="modal" data-target="#UserCreateModal" class="btn bg-blue float-sm-right">
+                    <i class="fa fa-plus-square"></i>
+                    @L("AddNew")
+                </a>
       <span class="pull-right">
         @Html.DropDownListFor(
            model => model.SelectedTaskState,
@@ -32,10 +60,28 @@
                id = "TaskStateCombobox"
            })
     </span>
-</h2>
+</h2>*@
 
-<div class="row">
-    <div>
+@*<div class="row">
+    
+</div>*@
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!--Use for bulk actions-->
+                            </div>
+                            <div class="col-md-6">
+                                @await Html.PartialAsync("~/Views/Tasks/Index.AdvancedSearch.cshtml")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                       <div>
         <ul class="list-group" id="TaskList">
             @foreach (var task in Model.Tasks)
             {
@@ -48,5 +94,18 @@
                 </li>
             }
         </ul>
+    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="modal fade" id="UserEditModal" tabindex="-1" role="dialog" aria-labelledby="UserEditModalLabel" data-backdrop="static">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        </div>
     </div>
 </div>

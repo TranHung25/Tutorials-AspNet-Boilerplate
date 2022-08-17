@@ -36,6 +36,7 @@ namespace Acme.SimpleTaskApp.Web.Startup
                     url: "Tasks",
                     icon: "fa fa-tasks"
 
+
                  )).AddItem(
                     new MenuItemDefinition(
                         PageNames.Tenants,
